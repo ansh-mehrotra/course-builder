@@ -1,0 +1,48 @@
+.module {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.module-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.module-header h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.resource-list {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+input[type="file"] {
+  margin-top: 10px;
+}
+
+.file-wrapper>button{
+  margin: 1vw;
+}

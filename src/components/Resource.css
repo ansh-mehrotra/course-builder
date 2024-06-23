@@ -1,0 +1,35 @@
+.resource {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.resource-start {
+  flex-grow: 1;
+}
+
+.resource-middle {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.resource-end {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.resource-end svg {
+  cursor: pointer;
+}
+
+.resource-end svg:hover {
+  color: #dc3545;
+}

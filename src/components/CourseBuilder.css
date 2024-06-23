@@ -1,0 +1,47 @@
+.course-builder {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.add-module-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.add-module-btn-wrapper{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2vw;
+}
+.add-module-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.add-module-btn:hover {
+  background-color: #0056b3;
+}
+
+.modules-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-align: center;
+}
