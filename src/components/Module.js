@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { Box, Button, Heading, HStack, Input, VStack, useColorModeValue, Image, Text } from '@chakra-ui/react';
 import { useDrop } from 'react-dnd';
 import { NativeTypes } from 'react-dnd-html5-backend';
-import { FaTrash, FaEdit } from 'react-icons/fa';
+import { FaTrash, FaEdit, FaArrowUp, FaArrowDown } from 'react-icons/fa';
 import { Worker, Viewer } from '@react-pdf-viewer/core';
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import Resource from './Resource';
 import './Module.css';
 
-const Module = ({ module, updateModule, deleteModule }) => {
+const Module = ({ module, index, updateModule, deleteModule, moveModule }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [newModuleName, setNewModuleName] = useState(module.name);
   const [previews, setPreviews] = useState([]);
@@ -69,6 +69,14 @@ const Module = ({ module, updateModule, deleteModule }) => {
     }
   };
 
+  const handleMoveUp = () => {
+    moveModule(index, index - 1);
+  };
+
+  const handleMoveDown = () => {
+    moveModule(index, index + 1);
+  };
+
   // Define color variables for light and dark modes
   const bg = useColorModeValue('white', 'gray.800');
   const textColor = useColorModeValue('black', 'white');
@@ -91,6 +99,12 @@ const Module = ({ module, updateModule, deleteModule }) => {
           <Heading size="md" color={textColor}>{module.name}</Heading>
         )}
         <HStack>
+          <Button onClick={handleMoveUp} disabled={index === 0} variant="ghost">
+            <FaArrowUp />
+          </Button>
+          <Button onClick={handleMoveDown} disabled={index === module.length - 1} variant="ghost">
+            <FaArrowDown />
+          </Button>
           <FaEdit onClick={() => setIsEditing(true)} cursor="pointer" />
           <FaTrash onClick={() => deleteModule(module.id)} cursor="pointer" />
         </HStack>
