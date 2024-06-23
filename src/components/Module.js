@@ -146,32 +146,6 @@ const Module = ({ module, index, updateModule, deleteModule, moveModule }) => {
         </Button>
       </HStack>
       <Box mt={8} />
-      <Box mt={4} p={2} borderWidth="1px" borderRadius="md" borderColor={borderColor} bg={inputBg}>
-        <Heading size="sm" mb={2} color={textColor}>File Preview:</Heading>
-        {previews.length > 0 ? (
-          <HStack spacing={4} wrap="wrap">
-            {previews.map(preview => (
-              <Box key={preview.id} p={2} borderWidth="1px" borderRadius="md" borderColor={borderColor}>
-                {preview.type === 'image' ? (
-                  <Image boxSize="200px" objectFit="cover" src={preview.url} alt="Preview" />
-                ) : preview.type === 'application' && preview.file.type === 'application/pdf' ? (
-                  <Box boxSize="200px">
-                    <Worker workerUrl={`https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js`}>
-                      <Viewer fileUrl={preview.url} />
-                    </Worker>
-                  </Box>
-                ) : (
-                  <Box boxSize="200px" display="flex" alignItems="center" justifyContent="center">
-                    <Text color={textColor}>File</Text>
-                  </Box>
-                )}
-              </Box>
-            ))}
-          </HStack>
-        ) : (
-          <Text color={textColor}>No files attached</Text>
-        )}
-      </Box>
     </Box>
   );
 };
