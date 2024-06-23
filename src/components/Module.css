@@ -46,3 +46,28 @@ input[type="file"] {
 .file-wrapper>button{
   margin: 1vw;
 }
+
+.drop-area {
+  padding: 20px;
+  border: 2px dashed #ccc;
+  transition: background-color 0.3s ease;
+}
+
+.drop-area.drag-over {
+  background-color: #f0f0f0;
+  border-color: #999;
+}
+
+.preview-box {
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-box img {
+  max-width: 50px;
+}
